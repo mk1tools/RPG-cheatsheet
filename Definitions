@@ -1,0 +1,24 @@
+       // VARIABLES
+       dcl-s FldAlpha char(15);
+       dcl-s FldNum packed(7:2);
+       dcl-s wrkItem like(ItemCode);
+        // UTF-8 variable
+       dcl-s MyDesc char(50) ccsid(*utf8);
+
+       // INITIALISATIONS
+       dcl-s CurUser char(10) inz(*user);
+       dcl-s CurDataJob date inz(*job);
+       dcl-s CurDataSys date inz(*sys);
+       dcl-s CurOra time inz(*sys);
+       dcl-s CurDataOra timestamp inz(*sys);
+       dcl-s FldAlpha2 char(15) inz('ABC');
+       dcl-s FldNum2 zoned(5) inz(10);
+        
+       
+       // CONSTANTS
+         // alphanumeric
+       dcl-c CstAlpha const('TENNIS');
+         // numeric
+       dcl-c CstNum const(12345,67);
+         // line feed
+       dcl-c xLF const(x'25');

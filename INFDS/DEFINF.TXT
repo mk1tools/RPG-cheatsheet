@@ -1,0 +1,26 @@
+INFDS - README
+
+USAGE
+F (file) specification: add the keyword infds([ds_name])
+D (data structure) specification: add a statement with open a definition for a data structure with keyword "noopt".
+ If you need more than one INFDS add the keyword "qualified".
+ Then insert a statement with /COPY directive. You can use the member corresponding to file type:
+  - database file: DEFINFF 
+  - display file:  DEFINFD
+  - printer file:  DEFINFP
+Don't add "end-ds" at the end.
+
+I suggest to create a short version with common fields useful in own environment.
+
+ATTENTION!
+1) the subfield with integer data type are initialised at maximum value when out of context.
+  4i 0 = 1077952576                                                                          
+  2i 0 = 16448                                                                               
+  2b 0 = 6448                                                                                
+ 2) The I/O count (read and write) are initialised after the first I/O operation (except open)
+
+ INFDS SECTIONS
+ - 1-80: file feedback
+ - 81-240: open feedback
+ - 241-366: I/O feedback
+ - 367-...: specific feedback for file type (printer, database, display...)

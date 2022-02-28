@@ -1,0 +1,38 @@
+       // static serial cursor for update
+       exec sql
+         declare c1 cursor for
+           select *
+             from table_name
+             order by field1
+             for update of field2;
+
+       // static serial cursor for read only
+       exec sql
+         declare c1 cursor for
+           select *
+             from table_name
+             order by field1
+             for read only;
+
+       // static scrollable cursor 
+       exec sql
+         declare c1 scroll cursor for
+           select *
+             from table_name
+             order by field1;
+
+       // static sensitive scrollable cursor
+        // as I scroll the cursor the data is read back from DB2 
+        // so the cursor is sensitive to changes made to records after OPEN                                                                  exec sql
+         declare c1 sensitive scroll cursor for
+           select *
+             from table_name
+             order by field1;             
+
+       // static insensitive scrollable cursor
+        // as I scroll the cursor the data isn't read back from DB2 
+        // so the cursor isn't sensitive to changes made to records after OPEN                                                                  exec sql
+         declare c1 insensitive scroll cursor for
+           select *
+             from table_name
+             order by field1;                          

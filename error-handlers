@@ -1,0 +1,21 @@
+       // check number with monitor group and %dec
+       dcl-s f1 char(8);
+       dcl-s wrk packed(8:2);
+       dcl-s errnum ind;
+      
+       errnum = *off;
+       monitor;
+         wrk = %dec(f1:8:2);
+         on-error;
+          errnum = *on;
+       endmon;
+
+       // catch I/O error
+       chain(e) KeyField customer;
+       if %error;
+         if %status = 1218;
+           // ...
+         else;
+           // ...
+         endif;
+       endif;

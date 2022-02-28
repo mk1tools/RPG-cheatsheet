@@ -1,0 +1,120 @@
+       // control specifications
+         // extended indicators
+       ctl-opt option(*extind);
+
+       // indicator variables definition
+       dcl-s iMyVar int(5);
+       dcl-s iMyVarAr int(5) dim(5);
+
+===================================
+ SQLCA Communication Area
+=================================== 
++---------+---------+---------------------+
+|         | SqlCode | SqlState            |
+|         |         | (first 2 bytes)     |
++---------+---------+---------------------+
+| error   | < 0     | <> '00', '01', '02' | 
+| success | = 0     | = '00000'           |
+| warning | > 0     | = '01', '02'        |
++---------+---------+---------------------+
+> SqlErrD diagnostic information
+ - SqlErrD(3): The number of rows fetched, updated, inserted, deleted or merged
+> SQLWarn diagnostic information
+ - SqlWarn(1): If set to W, at least one of the SQL warning flags (SQLWARN1 through SQLWARNA) is set.
+
+===================================
+ example of using a static cursor
+=================================== 
+0) declaration
+       exec sql
+         declare c1 cursor for
+           select ...
+       ;    
+1) open
+       exec sql                                                                                     
+        open c1;     
+
+       dou not fInput;
+2) read        
+         exec sql
+           fetch next
+             from c1
+             into :dsOut;
+
+         if sqlcode = 100;
+           leave;
+         endif;
+3) update
+         exec sql
+           update MyTab
+             set FIELD = 'xxx'
+             where current of c1;
+       enddo;
+4) close
+       exec sql
+         close c1;
+
+===================================
+ example of using a dynamic cursor
+=================================== 
+0) declaration
+       dcl-s sqlstm varchar(2000);
+       exec sql
+         declare c1 cursor for s1;
+
+1) preparation
+       sqlstm = 'select ....';
+       exec sql                                                                                     
+        prepare s1 from :sqlstm;                                                                 
+
+2) open
+       exec sql                                                                                     
+        open c1 
+        using :p1;     
+
+       dou not fInput;
+3) read        
+         exec sql
+           fetch next
+             from c1
+             into :dsOut;
+
+         if sqlcode = 100;
+           leave;
+         endif;
+4) update
+         exec sql
+           update MyTab
+             set FIELD = 'xxx'
+             where current of c1;
+       enddo;
+5) close
+       exec sql
+         close c1;         
+
+===================================
+ example of get diagnostic
+=================================== 
+       dcl-s msg char(52);
+       dcl-s MsgErrore varchar(32740);
+       dcl-s MsgID char(10);
+       dcl-s MsgIDCPF varchar(7);
+       dcl-s MsgIDCPD varchar(7);
+       dcl-s MsgLength int(10);                                                          
+       dcl-s db2sqlcode int(10);
+       dcl-s db2sqlstate char(5);
+       dcl-s RowNumber packed(31);
+
+       // monitor error
+       exec sql                                                                                     
+         get diagnostics condition 1 :MsgErrore = MESSAGE_TEXT,                                      
+                                     :MsgID = DB2_MESSAGE_ID,                                        
+                                     :MsgIDCPF = DB2_MESSAGE_ID1,                                    
+                                     :MsgIDCPD = DB2_MESSAGE_ID2,                                    
+                                     :MsgLength = MESSAGE_LENGTH,                                    
+                                     :db2sqlcode = DB2_RETURNED_SQLCODE,                             
+                                     :db2sqlstate = RETURNED_SQLSTATE;
+
+       // estimated number of rows
+       exec sql                                                                                     
+         get diagnostics :RowNumber = DB2_NUMBER_ROWS;
