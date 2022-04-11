@@ -1,7 +1,3 @@
-       // control specifications
-         // extended indicators
-       ctl-opt option(*extind);
-
        // indicator variables definition
        dcl-s iMyVar int(5);
        dcl-s iMyVarAr int(5) dim(5);
