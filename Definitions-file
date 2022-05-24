@@ -3,6 +3,8 @@
         // * DATABASE *
           // input
         dcl-f MyFile keyed;
+          // input and write
+        dcl-f MyFile keyed usage(*input: *output);
           // update
         dcl-f myFile keyed usage(*update);
           // update and write
