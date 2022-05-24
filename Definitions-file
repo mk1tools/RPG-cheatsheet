@@ -7,6 +7,8 @@
         dcl-f myFile keyed usage(*update);
           // update and write
         dcl-f MyFile keyed usage(*update: *output);
+          // update and delete
+        dcl-f myFile keyed usage(*update: *delete);
           // write
         dcl-f MyFile usage(*output);
           // all operations
