@@ -10,6 +10,16 @@
           errnum = *on;
        endmon;
 
+       // monitor error and escape message
+       ...
+       monitor;
+         // my code
+         on-excp 'CPF4101';
+           ...
+         on-error *file;
+           ...
+       endmon;
+
        // catch I/O error
        chain(e) KeyField customer;
        if %error;
