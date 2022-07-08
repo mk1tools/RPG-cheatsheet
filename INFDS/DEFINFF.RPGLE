@@ -28,7 +28,7 @@
          // number keys (bin) 
          fi_NumKeys int(5) pos(387); 
          // key length
-         fi_KeyLen int(5) pos(393);
+         fi_KeyLenF int(5) pos(393);
          // member number 
          fi_MbrNum int(5) pos(395);
          // relative-record-number 
