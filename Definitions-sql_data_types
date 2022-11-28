@@ -12,3 +12,6 @@
            MyFile_fo = SQFCRT;  // create
            MyFile_fo = SQFOVR;  // create or overwrite
            MyFile_fo = SQFAPP;  // append
+
+            exec sql
+              set :Myfile = 'testo di esempio';
