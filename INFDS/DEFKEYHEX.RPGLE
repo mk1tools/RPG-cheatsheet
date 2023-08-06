@@ -27,6 +27,8 @@
        dcl-c Clear     x'BD';
        dcl-c Enter     x'F1';
        dcl-c Help      x'F3';
+       dcl-c PageUp    x'F4';
+       dcl-c PageDown  x'F5';
        dcl-c RollDown  x'F4';
        dcl-c RollUp    x'F5';
        dcl-c Print     x'F6';
