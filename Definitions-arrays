@@ -49,4 +49,10 @@
         ArrayDs.aa1(2).x3(2) = '2';
         ArrayDs.aa1(2).x3(3) = '3';
 
-
+       // dynamic arrays
+         // user expand
+      dcl-s MyDynArr1 char(2) dim(*var:2000);       
+         // auto expand
+      dcl-s MyDynArr2 char(2) dim(*auto:2000);
+         // compile time dynamic array
+      dcl-s MyDynArr3 char(2) dim(*ctdata);

@@ -8,6 +8,8 @@
         // external
         dcl-ds Str extname('STREST') inz end-ds;
         dcl-ds MyStruct extname('DB2SAMPLE/EMPLOYEE') end-ds;
+          // only keys
+        dcl-ds MyKStruct extname('DB2SAMPLE/EMPLOYEE':*key) end-ds;
         // external with rename fields
         dcl-ds StrExt ext prefix(RN) end-ds;
         // like
@@ -68,3 +70,12 @@
         // keyword template
          // the definition is to be used only for further LIKE or LIKEDS definitions
         dcl-ds MyDS extname('MYTAB') template end-ds;
+
+        // date/time
+        // LastUpd è un timestamp. UpdDate e UpdTime sono rispettivamente la porzione data e ora del timestamp.
+        //  Devono essere in formato *ISO affinché siano compatibili con il formato del timestamp
+        dcl-ds; 
+          LastUpd timestamp;
+          UpdDate date(*ISO) overlay(LastUpd);
+          UpdTime time(*ISO) overlay(LastUpd:12);
+        end-ds;
