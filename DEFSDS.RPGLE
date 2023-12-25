@@ -79,9 +79,9 @@
         ps_ExtErr int(10) pos(368);
         // 372-379 - XML elements set by operation XML-INTO, DATA-INTO
         ps_XMLElem int(20) pos(372);
-        // 380-395 - internal job ID
+        // 380-395 - internal job ID (da 7.2)
         ps_IntJobID char(16) pos(380);
-        // 396-403 - system name
+        // 396-403 - system name (da 7.2)
         ps_SysName char(8) pos(396);
         // 404-429 - Unused
         ps_Fil2 char(50) pos(404);
