@@ -1,12 +1,16 @@
       * FILE VIDEO ESEMPIO PER DEFINIZIONE CAMPI CON REFERENCE FIELD
       * (c) MarkOneTools - www.markonetools.it - 2023
+      *
+      * ATTENTION!!!
+      * Packed decimal and binary fields are not supported for display files
+      * when you refer to fields of these types, the data type assigned is zoned decimal
+
      A*                                      DSPSIZ(27 132 *DS4)
-     A                                      REF(EXDATATYPE)
+     A                                      REF(DATATYPE)
      A          R FMT01
-     A*            WSMSGE        20A  O  2  2
-     A*                                 26  3'F3=Fine'
+      * char 10
      A            W_CHAR    R        H      REFFLD(F_CHAR)
-      * ==> char medesima lunghezza
+      * ==> char 10
      A            W_VARCHAR R        H      REFFLD(F_VARCHAR)
       * ==> zoned 5,2
      A            W_DEC     R        H      REFFLD(F_DEC)
@@ -29,9 +33,10 @@
       * NO
      A*           W_ROWID   R        H      REFFLD(F_ROWID)
       *
-      * ==> zoned 4,0 ==> RPG packed 4,0
+      * WITH ADJUSTEMENT
+      * ==> zoned 5,0 ==> RPG packed 5,0
      A            W2SMALLINTR   +1   H      REFFLD(F_SMALLINT)
-      * ==> zoned 9,0 ==> RPG packed 9,0
+      * ==> zoned 10,0 ==> RPG packed 10,0
      A            W2INT     R   +1   H      REFFLD(F_INT)
       * ==> zoned 20,0 ==> RPG packed 20,0
      A            W2BIGINT  R   +2   H      REFFLD(F_BIGINT)
