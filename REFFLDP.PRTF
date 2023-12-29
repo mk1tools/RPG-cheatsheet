@@ -1,0 +1,36 @@
+      * FILE PRINTER ESEMPIO PER DEFINIZIONE CAMPI CON REFERENCE FIELD
+      * (c) MarkOneTools - www.markonetools.it - 2023
+     A                                      REF(DATATYPE)
+     A          R DET01
+     A                                      SPACEB(001)
+      * char 10
+     A            P_CHAR    R              2REFFLD(F_CHAR)
+      * ==> char 10
+     A            P_VARCHAR R             +1REFFLD(F_VARCHAR)
+      * ==> zoned 5,2
+     A            P_DEC     R             +1REFFLD(F_DEC)
+      * zoned 5,2
+     A            P_NUM     R             +1REFFLD(F_NUM)
+      * ==> zoned 4,0
+     A            P_SMALLINTR             +1REFFLD(F_SMALLINT)
+      * ==> zoned 9,0
+     A            P_INT     R             +1REFFLD(F_INT)
+      * ==> zoned 18,0
+     A            P_BIGINT  R             +1REFFLD(F_BIGINT)
+      * date 10
+     A            P_DATE    R             +1REFFLD(F_DATE)
+      * time 8
+     A            P_TIME    R             +1REFFLD(F_TIME)
+      * timestamp 26,6
+     A            P_TIMESTMPR             +1REFFLD(F_TIMESTMP)
+      * ==> char 1
+     A            P_BOOLEAN R             +1REFFLD(F_BOOLEAN)
+      * ==> char 40
+     A            P_ROWID   R             +1REFFLD(F_ROWID)
+      * WITH ADJUSTEMENT
+      * ==> zoned 5,0
+     A            P2SMALLINTR   +1        +1REFFLD(F_SMALLINT)
+      * ==> zoned 10,0
+     A            P2INT     R   +1        +1REFFLD(F_INT)
+      * ==> zoned 20,0
+     A            P2BIGINT  R   +2        +1REFFLD(F_BIGINT)

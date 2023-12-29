@@ -16,11 +16,11 @@
      A            W_DEC     R        H      REFFLD(F_DEC)
       * zoned 5,2
      A            W_NUM     R        H      REFFLD(F_NUM)
-      * ==> zoned 4,0 ==> RPG packed 4,0
+      * ==> zoned 4,0
      A            W_SMALLINTR        H      REFFLD(F_SMALLINT)
-      * ==> zoned 9,0 ==> RPG packed 9,0
+      * ==> zoned 9,0
      A            W_INT     R        H      REFFLD(F_INT)
-      * ==> zoned 18,0 ==> RPG packed 18,0
+      * ==> zoned 18,0
      A            W_BIGINT  R        H      REFFLD(F_BIGINT)
       * date 10
      A            W_DATE    R        H      REFFLD(F_DATE)
@@ -28,15 +28,15 @@
      A            W_TIME    R        H      REFFLD(F_TIME)
       * timestamp 26,6
      A            W_TIMESTMPR        H      REFFLD(F_TIMESTMP)
-      * date ???
+      * ==> date !!! what?
      A            W_BOOLEAN R        H      REFFLD(F_BOOLEAN)
-      * NO
+      * NO CPD5702
      A*           W_ROWID   R        H      REFFLD(F_ROWID)
       *
       * WITH ADJUSTEMENT
-      * ==> zoned 5,0 ==> RPG packed 5,0
+      * ==> zoned 5,0
      A            W2SMALLINTR   +1   H      REFFLD(F_SMALLINT)
-      * ==> zoned 10,0 ==> RPG packed 10,0
+      * ==> zoned 10,0
      A            W2INT     R   +1   H      REFFLD(F_INT)
-      * ==> zoned 20,0 ==> RPG packed 20,0
+      * ==> zoned 20,0
      A            W2BIGINT  R   +2   H      REFFLD(F_BIGINT)
