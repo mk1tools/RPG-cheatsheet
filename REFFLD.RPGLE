@@ -138,6 +138,19 @@ dcl-ds dsDataType1 extname('DATATYPE_1') qualified inz end-ds;
 // F_VARCHAR         A(10)
 //                   VARYING(2)
 
+//--> data structure based on format database file
+dcl-ds dsDataType1R likerec(RDTYPEV1) inz;
+// equivalent to ds dsDataType1
+
+dcl-s W_DEC_from_DSPF   like(W_DEC);               // packed
+dcl-s W_NUM_from_DSPF   like(W_NUM);               // packed !!!
+dcl-s W_DEC_from_dsDSPF like(rFMT01.W_DEC);        // zoned  !!!
+dcl-s W_NUM_from_dsDSPF like(rFMT01.W_NUM);        // zoned
+dcl-s F_DEC_from_Tab    like(F_DEC);               // packed
+dcl-s F_NUM_from_Tab    like(F_NUM);               // packed !!!
+dcl-s F_DEC_from_dsTab  like(dsDataType1.F_DEC);   // packed
+dcl-s F_NUM_from_dsTab  like(dsDataType1.F_NUM);   // zoned
+
 // limit test
 F_CHAR = 'STD';
 W_INT = 999999999;
