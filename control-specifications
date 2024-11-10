@@ -1,5 +1,6 @@
        // suggested default control specification
        ctl-opt copyright('My company')
+         cursym('€')
          decedit('0,')
          indent(' ')
          option(*nodebugio: *srcstmt: *showcpy)
