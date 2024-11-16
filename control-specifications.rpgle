@@ -28,5 +28,11 @@
        // binding directories
        ctl-opt bnddir(DIR1:DIR2);
 
-       // web services
+       //-- WEB SERVICES
        ctl-opt pgminfo(*PCML:*MODULE:*V7);
+
+       //-- LINEAR-MAIN
+       ctl-opt main(MyMainProc);
+
+       //-- SERVICE PROGRAMS
+       ctl-opt nomain;
