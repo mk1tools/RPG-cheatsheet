@@ -3,7 +3,7 @@
          cursym('€')
          decedit('0,')
          indent(' ')
-         option(*nodebugio: *srcstmt: *showcpy)
+         option(*nodebugio: *srcstmt: *showcpy: *nounref)
          expropts(*resdecpos)
          extbinint(*yes);
 

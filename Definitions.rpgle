@@ -35,7 +35,15 @@
          // numeric
        dcl-c CstNum const(12345,67);
          // line feed
-       dcl-c xLF const(x'25');
+       dcl-c xNULL const(x'00');  // Null terminator
+       dcl-c xLF const(x'25');    // Line feed
+       dcl-c xCR const(x'0D');    // Carriage Return
+       dcl-c xCRLF const(x'0D25');// Carr.Rtn/Line feed
+       dcl-c xSPACE const(x'40'); // blank
+       dcl-c xTAB const(x'05');   // Tab
+       dcl-c AP const('''');      // quote
+       dcl-c BL const(''' ''');   // quoted blank
+
 
        // ENUMERATIONS
        dcl-enum CASE_TYPE;
