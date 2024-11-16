@@ -8,12 +8,12 @@
             // Msg(1) = m1
             // Msg(2) = m2
        dcl-ds Messagges;
-        m1 like(Msg) inz('Text message 1');
-        m2 like(Msg) inz('Text message 2');
-        Msg char(120) pos(1) dim(2);
+         m1 like(Msg) inz('Text message 1');
+         m2 like(Msg) inz('Text message 2');
+         Msg char(120) pos(1) dim(2);
        end-ds;
 
-         //--- run-time ---
+       //--- run-time ---
        dcl-s MyArray char(80) dim(5);
        dcl-s MyArray2 like(MyArray) dim(%elem(MyArray));
 

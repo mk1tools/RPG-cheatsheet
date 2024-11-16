@@ -12,6 +12,9 @@
         dcl-ds MyKStruct extname('DB2SAMPLE/EMPLOYEE':*key) end-ds;
         // external with rename fields
         dcl-ds StrExt ext prefix(RN) end-ds;
+        dcl-ds StrExt ext;
+          RNDATBEG extfld(DATBEG);
+        end-ds;
         // like
         dcl-ds NewDS likeds(MyDS) inz(*likeds);
 

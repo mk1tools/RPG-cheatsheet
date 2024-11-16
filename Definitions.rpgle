@@ -1,7 +1,9 @@
        // VARIABLES
        dcl-s FldAlpha char(15);
        dcl-s FldNum packed(7:2);
-       dcl-s wrkItem like(ItemCode);
+       dcl-s FldNumNoDec zoned(7);
+       dcl-s ItemDesc varchar(100);
+       dcl-s FldBoolean ind;
         // UTF-8 variable
        dcl-s MyDesc char(50) ccsid(*utf8);
         // date/time
