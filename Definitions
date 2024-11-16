@@ -24,6 +24,8 @@
        dcl-s bName char(128) template;       
        dcl-s bSysName char(10) template;
        dcl-s MyLib like(bName);
+	     // increment length
+	   dcl-s Amount like(Price:+2);
 
        // CONSTANTS
          // alphanumeric
