@@ -22,6 +22,9 @@
        dcl-s FldAlpha2 char(15) inz('ABC');
        dcl-s FldNum2 zoned(5) inz(10);
 
+       // CONSTANTS VARIABLES INITIALIZED 
+	   dcl-s startProcess timestamp inz(*sys) const;
+	   
        // KEYWORD
        dcl-s bName char(128) template;       
        dcl-s bSysName char(10) template;

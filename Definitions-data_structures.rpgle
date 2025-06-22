@@ -82,3 +82,9 @@
           UpdDate date(*ISO) overlay(LastUpd);
           UpdTime time(*ISO) overlay(LastUpd:12);
         end-ds;
+		
+		// constants data structures
+		dcl-ds MyDefaults qualified const;
+		  MyUser char(10) inz(*user);
+		  MyProcess varchar(20) inz('Import orders');
+		end-ds;

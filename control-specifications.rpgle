@@ -15,6 +15,14 @@
        ctl-opt datedit(*ymd);
        // dd-mm-yyyy format 
        ctl-opt datedit(*dmy);
+	   
+	   //-- DATE 2-YEAR WARNING --
+	     // only warning at compile time
+	   ctl-opt dateyy(*warn);
+	     // error at compile time
+	   ctl-opt dateyy(*noallow);
+	     // does not check for dates with 2-digit years. Default
+	   ctl-opt dateyy(*allow);
 
        //-- ACTIVATION GROUP AND BINDING DIRECTORIES --
        // new activation group
