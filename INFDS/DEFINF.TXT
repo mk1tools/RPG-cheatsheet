@@ -2,7 +2,8 @@ INFDS - README
 
 USAGE
 F (file) specification: add the keyword infds([ds_name])
-D (data structure) specification: add a statement with open a definition for a data structure with keyword "noopt".
+D (data structure) specification: add a statement with open a definition 
+ for a data structure with keyword "noopt".
  If you need more than one INFDS add the keyword "qualified".
  Then insert a statement with /COPY directive. You can use the member corresponding to file type:
   - database file: DEFINFF 
@@ -13,7 +14,7 @@ Don't add "end-ds" at the end.
 I suggest to create a short version with common fields useful in own environment.
 
 ATTENTION!
-1) the subfield with integer data type are initialised at maximum value when out of context.
+ 1) the subfield with integer data type are initialised at maximum value when out of context.
   4i 0 = 1077952576                                                                          
   2i 0 = 16448                                                                               
   2b 0 = 6448                                                                                
