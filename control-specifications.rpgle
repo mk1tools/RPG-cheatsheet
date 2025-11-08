@@ -4,12 +4,15 @@
          decedit('0,')
          indent(' ')
          option(*nodebugio: *srcstmt: *showcpy: *nounref)
-         expropts(*resdecpos)
+         expropts(*resdecpos: *alwblanknum)
          extbinint(*yes);
 
        // ignore decimal errors
        ctl-opt fixnbr(*zoned:*inputpacked);
 
+       // allow null field
+	   ctl-opt alwnull(*usrctl);
+	   
        //-- DATE FORMAT --
        // yyyy-mm-dd format 
        ctl-opt datedit(*ymd);
